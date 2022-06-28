@@ -11,5 +11,6 @@ public class Test {
         System.out.println(arbol);
         arbol.insert(2);
         System.out.println(arbol);
+        System.out.println("Buscar el valor 9: \n"+arbol.search(9));
     }
 }

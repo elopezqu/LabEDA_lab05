@@ -5,6 +5,29 @@ public class AVL<T extends Comparable<T>> {
 
     public AVL() { this.root = null; }
 
+    public String search(T x){
+        NodeAVL<T> res = searchNode(x, (NodeAVL<T>)this.root);
+        if(res != null && res.data==x){
+            return "El dato se encuentra en el arbol";
+        }
+        return "El dato no se encuentra en el arbol";
+    }
+
+    private NodeAVL<T> searchNode(T x, NodeAVL<T> n){
+        if (n == null) {
+            return null;
+        } else {
+            int resC = n.data.compareTo(x);
+            if (resC < 0) {
+                return searchNode(x, (NodeAVL<T>)n.right);
+            } else if (resC > 0) {
+                return searchNode(x, (NodeAVL<T>)n.left);
+            } else {
+                return n;
+            }
+        }
+    }
+
     public void insert(T x) {
         this.altura = false;
         this.root = insertRec(x, this.root);
