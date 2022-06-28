@@ -7,10 +7,16 @@ public class Test {
         System.out.println(arbol);
         arbol.insert(1);
         System.out.println(arbol);
-        arbol.insert(3);
+        arbol.insert(4);
         System.out.println(arbol);
         arbol.insert(2);
         System.out.println(arbol);
-        System.out.println("Buscar el valor 9: \n"+arbol.search(9));
+        arbol.insert(8);
+        System.out.println(arbol);
+        arbol.insert(3);
+        System.out.println(arbol);
+        System.out.println("Buscar el valor 9: \n" + arbol.search(9));
+        arbol.remove(2);
+        System.out.println(arbol);
     }
 }

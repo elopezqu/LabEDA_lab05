@@ -119,36 +119,48 @@ public class AVL<T extends Comparable<T>> {
         return node;
     }
     
-    public void remove(T x) {
-    };
-
-
-    protected NodeAVL<T> rotateDSR(NodeAVL<T> node) {
-        node.left = rotateSL((NodeAVL<T>) node.right);
-        return rotateSR(node);
-
+    public void remove(T x){
+        this.root = removeRec(x,this.root);
     }
 
-    protected NodeAVL<T> rotateDSL(NodeAVL<T> node) {
-        node.right = rotateSR((NodeAVL<T>) node.left);
-        return rotateSL(node);
+    private NodeAVL<T> removeRec(T x, NodeAVL<T> actual) {
+        NodeAVL<T> res = actual;
+        int resC = actual.data.compareTo(x);
+        if (resC < 0) {
+            res.right = removeRec(x, (NodeAVL<T>)actual.right);
+        } else {
+            if (resC > 0) {
+                res.left = removeRec(x, (NodeAVL<T>)actual.left);
+            } else { // encontramos el nodo
+                if (actual.left != null && actual.right != null) {// dos hijos
+                    res.data = minRecover((NodeAVL<T>)actual.right).data;
+                    res.right = minRemove((NodeAVL<T>)actual.right);
+                } else {
+                    // 1 hijo o ninguno
+                    res = (actual.left != null) ? (NodeAVL<T>)actual.left : (NodeAVL<T>)actual.right;
+                }
+            }
+        }
+        return res;
+    }
+    protected NodeAVL<T> minRemove(NodeAVL<T> actual){
+        if (actual.left != null){
+            altura = true;
+            actual.left = minRemove((NodeAVL<T>)actual.left);
+        }
+        else{
+            actual =(NodeAVL<T>)actual.right;
+        }
+        return actual;
     }
 
-    private void updateHeight(NodeAVL<T> node) {
-        int leftHeight = height((NodeAVL<T>) node.left);
-        int rightHeight = height((NodeAVL<T>) node.right);
-
-        node.setFE(Math.max(leftHeight, leftHeight) + 1);
-    }
-
-    private int height(NodeAVL<T> node) {
-        if (node == null)
-            return -1;
-        return node.fe;
-    }
-
-    private int factorEquilibrio(NodeAVL<T> node) {
-        return height((NodeAVL<T>) node.right) - height((NodeAVL<T>) node.left);
+    protected NodeAVL<T> minRecover(NodeAVL<T> actual){
+        if(actual.left != null){
+            return minRecover((NodeAVL<T>)actual.left);
+        }
+        else{
+            return actual;
+        }
     }
 
     public String toString() {
@@ -161,10 +173,10 @@ public class AVL<T extends Comparable<T>> {
     private String postOrden(NodeAVL<T> current) {
         String str = "";
         if (current.left != null)
-            str += postOrden((NodeAVL<T>)current.left);
+            str += postOrden((NodeAVL<T>) current.left);
         if (current.right != null)
-            str += postOrden((NodeAVL<T>)current.right);
-            str += current.data + "[" + current.fe +"], ";
+            str += postOrden((NodeAVL<T>) current.right);
+        str += current.data + "[" + current.fe + "], ";
         return str;
     }
 
