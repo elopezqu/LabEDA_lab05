@@ -4,40 +4,17 @@ public class Node<E>{
 	protected Node<E> right;
     protected Node<E> left;
 	// constructor de "Node"
-	public Node(E valor) {
-		data = valor;
-		right = null;
+
+    public Node(E valor) {
+        data = valor;
+        right = null;
         left = null;
-	}
-    public Node(E valor, Node<E> left, Node<E> right){
+    }
+
+    public Node(E valor, Node<E> left, Node<E> right) {
         data = valor;
         this.left = left;
         this.right = right;
     }
-
-    // metodos getter
-    public Node<E> getRightNode() {
-        return right;
-    }
-
-    public Node<E> getLeftNode() {
-        return left;
-    }
-
-    public E getData() {
-        return data;
-    }
-
-    // Metodos Setter
-    public void setData(E dat) {
-        data = dat;
-    }
-
-    public void setLeft(Node<E> l) {
-        this.left = l;
-    }
-
-    public void setRight(Node<E> r) {
-        this.right = r;
-    }
+    
 }

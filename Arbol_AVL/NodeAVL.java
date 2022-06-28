@@ -7,6 +7,9 @@ public class NodeAVL<T> extends Node<T>{
     public NodeAVL(T data){
         this (data,null,null);
     }
+    public NodeAVL(){
+        this (null,null,null);
+    }
     public void setFE(int fe){
         this.fe = fe;
     }
