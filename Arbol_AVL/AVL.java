@@ -4,13 +4,28 @@ public class AVL<T extends Comparable<T>> {
 
     public AVL() { this.root = null; }
 
-    public void insert(T x){};
-
+    public void insert(T x){
+        NodeAVL<T> nuevo = new NodeAVL<T>(x);
+        NodeAVL<T> actual = this.root;
+        while(actual != null ){
+            if(nuevo.data.compareTo(actual.data)==1){
+                actual = (NodeAVL<T>)actual.getRightNode();
+            }
+            if(nuevo.data.compareTo(actual.data)==-1){
+                actual = (NodeAVL<T>)actual.getLeftNode();
+            }
+        }
+        if(actual==null){
+            actual = nuevo;
+        }
+        
+    }
+    
     public void remove(T x){};
     
     
     protected NodeAVL<T> rotateSR(NodeAVL<T>node) {
-        NodeAVL<T>h = (NodeAVL)node.left;
+        NodeAVL<T>h = (NodeAVL<T>)node.left;
         node.left = h.right;
         h.right = node;
         node = h;
@@ -20,7 +35,7 @@ public class AVL<T extends Comparable<T>> {
         return node;
     }
     protected NodeAVL<T> rotateSL(NodeAVL<T>node) {
-        NodeAVL<T>h = (NodeAVL)node.right;
+        NodeAVL<T>h = (NodeAVL<T>)node.right;
         node.right = h.left;
         h.left = node;
         node = h;
