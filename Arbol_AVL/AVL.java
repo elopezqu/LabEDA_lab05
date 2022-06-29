@@ -179,5 +179,27 @@ public class AVL<T extends Comparable<T>> {
         str += current.data + "[" + current.fe + "], ";
         return str;
     }
+    protected NodeAVL<T> rotateDSR(NodeAVL<T>node){
+        node.left = rotateSL((NodeAVL<T>)node.left);
+        return rotateSR(node);
+    }
+    protected NodeAVL<T> rotateDSL(NodeAVL<T>node){
+        node.right = rotateSR((NodeAVL<T>)node.right);
+        return rotateSL(node);
+    }
+    
+    private int height(NodeAVL<T> node){
+        if(node == null)
+            return -1;
+        return node.fe;
+    }
+    private void updateHeight(NodeAVL<T> node){
+        int leftHeight = height((NodeAVL<T>)node.left);
+        int rightHeight = height((NodeAVL<T>)node.right);
+        node.setFE( Math.max(leftHeight, rightHeight)+1 );
+    }
+    private int factorEquilibrio(NodeAVL<T> node){
+        return height((NodeAVL<T>)node.right) - height((NodeAVL<T>)node.left);
+    }
 
 }
