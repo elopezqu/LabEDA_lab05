@@ -46,7 +46,8 @@
         <li>Operaciones de árbol AVL</li>
 	    <em>-> </em><br>
         <li>Árbol AVL</li>
-	    <em>-> </em><br>
+	    -Los AVL se parecen mucho a los BST , pero destacan porque presentan un factor de equilibrio, la cual no debe superar en 2 niveles la raiz izquierda a la derecha y viceversa garantizando mejores tiempos de ejecución.<br>Para el ejecicio se crearon tres clases:<img src="Imagenes/ClasesAVL.jpg"><br>En la clase AVL contiene el código del funcionamiento, inserción busqueda, eliminación y un metodos para imprimer el arbol en post orden, el, la clase Node contiene la forma basica de un Nodo visto en anteriores  laboratorios, la clase NodeAVL es una extención de la clase Node referido al AVL, y la clase Test son experimentos de la funcionalidad.
+        <img src="Imagenes/EjemploTest.jpg">Al lado de Valor esta el factor de equilibrio<br>
     </ol>
   </ul>
 
@@ -69,8 +70,8 @@
   <tr><td><strong>REFERENCIAS Y BIBLIOGRAFÍA</strong></td><tr>
  </theader>
  <tbody>
-  <tr><td>...</td></tr>
-  <tr><td>...</td></tr>
+  <tr><td>https://algorithmtutor.com/Data-Structures/Tree/AVL-Trees/</td></tr>
+  <tr><td>https://docs.oracle.com/javase/tutorial/java/generics/types.html</td></tr>
   <tr><td>...</td></tr>
   <tr><td>...</td></tr>
   <tr><td>...</td></tr>
