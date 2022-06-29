@@ -12,6 +12,10 @@ public class corchetesBalancedos {
 		for(int i=0; i<cadena.length(); i++) {
 			secciones[i]=cadena.substring(i,i+1);
 		}
+		int count=secciones.length/2;
+		System.out.println("count: "+count);
+		for(int i=0; i<count; i++) {
+		}
 		return "";
 		
 			
