@@ -42,9 +42,9 @@
   <ul>
     <ol>
         <li>Corchete equilibrados</li>
-	    <em>-> </em><br>
+	    -El programa se encarga de equilibrarlos corchetes <br>Se considera que dos corchetes son un par coincidente si un corchete de apertura (es decir, (, [, o ) aparece a la izquierda de un corchete de cierre (es decir, ), ] o ) del mismo tipo exacto. Hay tres tipos de pares de corchetes coincidentes: [], {} y () <br> 
         <li>Operaciones de árbol AVL</li>
-	    <em>-> </em><br>
+	    -Se simula las operaciones de un AVL <br>
         <li>Árbol AVL</li>
 	    -Los AVL se parecen mucho a los BST , pero destacan porque presentan un factor de equilibrio, la cual no debe superar en 2 niveles la raiz izquierda a la derecha y viceversa garantizando mejores tiempos de ejecución.<br>Para el ejecicio se crearon tres clases:<br>
         <img src="Imagenes/ClasesAVL.jpg"><br>En la clase AVL contiene el código del funcionamiento, inserción busqueda, eliminación y un metodos para imprimer el arbol en post orden, el, la clase Node contiene la forma basica de un Nodo visto en anteriores  laboratorios, la clase NodeAVL es una extención de la clase Node referido al AVL, y la clase Test son experimentos de la funcionalidad.<br>
