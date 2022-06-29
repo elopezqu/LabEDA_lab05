@@ -43,6 +43,7 @@
     <ol>
         <li>Corchete equilibrados</li>
 	    -El programa se encarga de equilibrarlos corchetes <br>Se considera que dos corchetes son un par coincidente si un corchete de apertura (es decir, (, [, o ) aparece a la izquierda de un corchete de cierre (es decir, ), ] o ) del mismo tipo exacto. Hay tres tipos de pares de corchetes coincidentes: [], {} y () <br> 
+        <img src="Imagenes/CochetesEquilibrados.jpeg">
         <li>Operaciones de árbol AVL</li>
 	    -Se simula las operaciones de un AVL <br>
         <li>Árbol AVL</li>
