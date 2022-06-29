@@ -52,7 +52,10 @@
     </ol>
   </ul>
 
-  <tr><td><strong>III. CONCLUSIONES:</strong><br>...<br></td></tr>
+  <tr><td><strong>III. CONCLUSIONES:</strong><br>- Un AVL es un arbol binario de busqueda que satisface la condicion de estar balanceado<br>
+  - La propiedad del balanceo dice que para cada nodo la diferencia de alturas entre el subarbol izquierdo y derecho es a lo sumo 1<br>
+  - Esta propiedad garantiza que la altura del arbol sea de O(log n)<br>
+  - En cada nodo del arbol se guarda informacion de la altura<br></td></tr>
  </tbody>
 </table>
 <hr>
@@ -62,7 +65,8 @@
   </td><tr>
  </theader>
  <tbody>
-  <tr><td>...</td></tr>
+  <tr><td>- AVL (Addelson-Velskii y Landis) Este tipo de arbol nos permite tener una estructura eficiente con respecto a su padre el BST, y trata de mantenerlo balanceado(BST)
+  </td></tr>
  </tbody>
 </table>
 <hr>
