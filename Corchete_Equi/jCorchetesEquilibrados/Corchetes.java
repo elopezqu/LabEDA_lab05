@@ -4,14 +4,11 @@ package corchetees;
 public class Corchetes {
 
   public static void main(String[] args) {
-    System.out.println("Hello World!");
     String cadena = "{([()]}}";
     Node node = new Node();
-    for (int i=0; i<(cadena.length())/2; i++){
-      System.out.println(cadena.charAt(i));
-    }
     node = generarArbol(node, cadena);
-    System.out.println(PreOrden(node));
+    System.out.println("CADENA ORIGINAL: " + cadena);
+    System.out.println("CADENA CORRECTA: "+PreOrden(node));
     
     System.out.println(isBalanced(cadena, node));
   }
